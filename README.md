@@ -56,15 +56,24 @@ git clone https://github.com/ivanalejandrozambrano/ProyectoP3
 cd ProyectoP3
 ```
 
+## Configuración de la Base de Datos
+
+El archivo de configuración de la base de datos se encuentra en la carpeta `backEnd/config`. Ahí se define la conexión a la base de datos PostgreSQL. Puedes ajustar los parámetros de conexión en el archivo `db.js` según tu entorno local o de producción.
+
+### Ubicación del archivo:
+backEnd/config/db.js
+
 ## Inicializar
 
 ### Backend
 ```bash
+cd backEnd
 node server.js
 ```
 
 ### FrondEnd
 ```bash
+cd frondEnd
 npm start
 ```
 
