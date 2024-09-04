@@ -1,4 +1,4 @@
-"# ProyectoP3 - Gestión de Créditos
+# ProyectoP3 - Gestión de Créditos
 
 ###Integrantes: Cunguan_Meneses_Villacis_Zambrano
 ## Descripción
@@ -21,7 +21,8 @@ CREATE TABLE Users (
     password character varying(255) NOT NULL,
     createdAt timestamp without time zone DEFAULT NOW(),
     updatedAt timestamp without time zone DEFAULT NOW()
-);```
+);
+```
 ### Tabla `solicitudes `
 ```sql
 CREATE TABLE solicitudes (
@@ -35,5 +36,37 @@ CREATE TABLE solicitudes (
     cantidad_propiedades INT NULL,
     cedula VARCHAR(255) NULL,
     fecha_solicitud TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);```
+);
+```
+### Tabla `historiales `
+```sql
+CREATE TABLE historiales (
+    id SERIAL PRIMARY KEY,
+    solicitud_id INTEGER REFERENCES solicitudes(id) ON DELETE CASCADE,
+    estado VARCHAR(255) NOT NULL,
+    justificacion TEXT NOT NULL
+);
+```
+
+## Instalación
+
+### Clonar el repositorio
+```bash
+git clone https://github.com/ivanalejandrozambrano/ProyectoP3
+cd ProyectoP3
+```
+
+## Inicializar
+
+### Backend
+```bash
+node server.js
+```
+
+### FrondEnd
+```bash
+npm start
+```
+
+
 
